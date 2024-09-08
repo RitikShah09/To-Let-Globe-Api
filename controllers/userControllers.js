@@ -178,7 +178,7 @@ exports.forgotPassword = catchAsyncErrors(async (req, res, next) => {
   user.resetPasswordExpire = Date.now() + 15 * 60 * 1000; // 15 minutes
   await user.save();
 
-  const resetUrl = `${process.env.BASE_URL}/reset-password/${resetToken}`;
+  const resetUrl = `${process.env.CLIENT_URL}/reset-password/${resetToken}`;
   const mailOptions = {
     from: process.env.MAIL_ADDRESS,
     to: user.email,
