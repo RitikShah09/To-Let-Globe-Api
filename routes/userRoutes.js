@@ -13,6 +13,7 @@ const { isAuthenticated } = require("../middlewares/auth");
 const router = express.Router();
 
 router.get("/", homePage);
+router.post("/user", isAuthenticated, currentUser);
 router.post("/user/signup", userSignup);
 router.get("/verify/:id", verifyAccount);
 router.post("/user/signin", userSignin);
