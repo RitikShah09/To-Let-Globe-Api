@@ -7,7 +7,7 @@ exports.sendToken = (user, statusCode, res) => {
     httpOnly: true, // Cookie can't be accessed by client-side JavaScript
     secure: process.env.NODE_ENV === "production", // Cookie only sent over HTTPS in production
     sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax", // Allow cross-origin requests in production
-    domain: process.env.NODE_ENV === "production" ?  '.vercel.app' : "localhost", // Specify domain for production
+    domain: process.env.NODE_ENV === "production" ?  'vercel.app' : "localhost", // Specify domain for production
      path: '/'
   };
 
