@@ -9,6 +9,10 @@ const jwt = require("jsonwebtoken");
 exports.homePage = catchAsyncErrors(async (req, res) => {
   res.status(200).json({ msg: "Welcome, API Is Working" });
 });
+exports.currentUser = catchAsyncErrors(async (req, res, next) => {
+  const user = await User.findById(req.id).exec();
+  res.json(user);
+});
 
 // User Signup
 exports.userSignup = catchAsyncErrors(async (req, res, next) => {
