@@ -7,6 +7,7 @@ const {
   userSignup,
   verifyAccount,
   resetPassword,
+  currentUser
 } = require("../controllers/userControllers");
 const { isAuthenticated } = require("../middlewares/auth");
 
