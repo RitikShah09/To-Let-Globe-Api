@@ -1,5 +1,6 @@
 exports.sendToken = (user, statusCode, res) => {
   const token = user.getJwtoken();
+const domain = process.env.CLIENT_URL.replace(/^https?:\/\//, "");
 
   const options = {
     expires: new Date(
