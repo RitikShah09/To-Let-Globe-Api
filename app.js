@@ -6,7 +6,7 @@ require("./models/database").connectDatabase();
 const cors = require("cors");
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: "https://to-let-globe-client.vercel.app",
     credentials: true,
   })
 );
