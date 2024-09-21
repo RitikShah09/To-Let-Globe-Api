@@ -4,9 +4,10 @@ exports.sendToken = (user, statusCode, res) => {
     expires: new Date(
       Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
-  secure: true, // Use HTTPS
-  sameSite: 'None', // Required for cross-origin cookies
-  domain: '.vercel.app',
+    httpOnly: true, // Prevents JavaScript access to the cookie
+    secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+    sameSite: 'None', // Required for cross-origin cookies
+    domain: '.vercel.app', // Ensures the cookie is accessible across all subdomains
   };
 
   res
