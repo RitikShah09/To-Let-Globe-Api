@@ -12,6 +12,7 @@ app.use(
 );
 // Additionally, make sure to set the correct headers for Access-Control-Allow-Credentials
 app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://to-let-globe-client.vercel.app");
   res.header("Access-Control-Allow-Credentials", "true");
   next();
 });
