@@ -6,11 +6,16 @@ require("./models/database").connectDatabase();
 const cors = require("cors");
 app.use(
   cors({
-    Access-Control-Allow-Credentials: true
-    origin: "https://to-let-globe-client.vercel.app",
-    credentials: true,
+    origin: "https://to-let-globe-client.vercel.app", // specify the allowed origin
+    credentials: true, // allow credentials (cookies, etc.)
   })
 );
+// Additionally, make sure to set the correct headers for Access-Control-Allow-Credentials
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Credentials", "true");
+  next();
+});
+
 app.use(express.json());
 
 const logger = require("morgan");
