@@ -5,7 +5,7 @@ exports.sendToken = (user, statusCode, res) => {
       Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
     httpOnly: true, // Prevents JavaScript access to the cookie
-    secure: process.env.NODE_ENV === 'production', // Use HTTPS in production
+    secure: true, // Use HTTPS in production
     sameSite: 'None', // Required for cross-origin cookies
     domain: '.vercel.app', // Ensures the cookie is accessible across all subdomains
   };
