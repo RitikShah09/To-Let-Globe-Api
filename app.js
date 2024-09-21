@@ -6,6 +6,7 @@ require("./models/database").connectDatabase();
 const cors = require("cors");
 app.use(
   cors({
+    Access-Control-Allow-Credentials: true
     origin: "https://to-let-globe-client.vercel.app",
     credentials: true,
   })
